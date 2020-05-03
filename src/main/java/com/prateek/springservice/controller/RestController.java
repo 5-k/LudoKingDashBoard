@@ -1,7 +1,5 @@
 package com.prateek.springservice.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -66,4 +64,16 @@ public class RestController {
 		service.deleteMatchRecord(id);
 		return new ResponseEntity(new JsonResponse("Result Deleted"), HttpStatus.OK);
 	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "/api/semifinals", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?>  semifinals() {
+		return new ResponseEntity(service.getSemiFinalsData(), HttpStatus.OK);
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/api/finals", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?>  finals() {
+		return new ResponseEntity(service.getFinalsData(), HttpStatus.OK);
+	}
+	
+	
 }

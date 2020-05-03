@@ -18,13 +18,16 @@ import java.util.TreeMap;
 import com.fasterxml.jackson.databind.util.BeanUtil;
 import com.prateek.springservice.dto.LeaderBoardDTO;
 import com.prateek.springservice.dto.MatchScheduleAndResultDTO;
+import com.prateek.springservice.dto.SemiAndFinalsDTO;
 import com.prateek.springservice.dto.UserDto;
 import com.prateek.springservice.entity.MatchResult;
 import com.prateek.springservice.entity.MatchSchedule;
+import com.prateek.springservice.entity.SemiAndFinals;
 import com.prateek.springservice.entity.User;
 import com.prateek.springservice.exception.ApplicationRuntimeException;
 import com.prateek.springservice.repo.MatchResultRepository;
 import com.prateek.springservice.repo.MatchScheduleRepository;
+import com.prateek.springservice.repo.SemifinalsAndFinalsRepo;
 import com.prateek.springservice.repo.UserRepository;
 import com.prateek.springservice.utility.ApplicationUtility;
 
@@ -44,12 +47,16 @@ public class Service {
 	@Autowired
 	private MatchResultRepository matchResultRepository;
 
+	@Autowired
+	private SemifinalsAndFinalsRepo semifinalsAndFinalsRepo;
+
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
 	SimpleDateFormat dateParser = new SimpleDateFormat("yyyy-MMM-dd");
 	SimpleDateFormat timeParser = new SimpleDateFormat("HH:mm");
 	LeaderBoardComparator leaderBoardComparator = new LeaderBoardComparator();
 
 	private List<User> userList = new ArrayList<>();
+	private List<SemiAndFinals> semiAndFinals = new ArrayList<>();
 	private List<MatchResult> matchResults = new ArrayList<>();
 	private List<MatchSchedule> matchSchedules = new ArrayList<>();
 	private Map<String,String> mapOfUserAndPics = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
@@ -58,6 +65,8 @@ public class Service {
 		userList=userRepo.findAll();
 		matchSchedules= matchScheduleRepository.findAll();
 		matchResults=matchResultRepository.findAll();
+		semiAndFinals = semifinalsAndFinalsRepo.findAll();
+		
 		mapOfUserAndPics.put("Aditya", "assets\\img\\Photos1\\player_eddy.jpg");
 		mapOfUserAndPics.put("Nishant", "assets\\img\\Photos1\\Player1_Nishant.jpg");
 		mapOfUserAndPics.put("Arpit", "assets\\img\\Photos1\\Player2_Puchi.jpg");
@@ -68,6 +77,7 @@ public class Service {
 		mapOfUserAndPics.put("Shubham", "assets\\img\\Photos1\\Player8_Shubham.jpg");
 		mapOfUserAndPics.put("Anita", "assets\\img\\Photos1\\Player9_Annie.jpg");
 		mapOfUserAndPics.put("Pranjal", "assets\\img\\Photos1\\player10_pranjal.jpg");
+		mapOfUserAndPics.put("TBA", "assets\\img\\Photos1\\unknown.jpg");
 	}
 	
 	public List<UserDto> getAllUsers() {
@@ -138,6 +148,9 @@ public class Service {
 		for(int i = 0 ; i < userList.size(); i++) {
 			LeaderBoardDTO leaderBoardDTO = new LeaderBoardDTO();
 			User currentUser = userList.get(i);
+			if(currentUser.getName().trim().equalsIgnoreCase("TBA")) {
+				continue;
+			}
 
 			int points = 0;
 			int win=0,lost=0,notplayed=0;
@@ -284,4 +297,48 @@ public class Service {
 			throw new RuntimeException("Not found");
 		}
 	}
+
+
+
+	public List<SemiAndFinalsDTO> getSemiFinalsData() {
+		
+		 SemiAndFinals semi1 =  semiAndFinals.get(0);
+		 SemiAndFinals semi2 =  semiAndFinals.get(1);
+
+		 List<SemiAndFinalsDTO> list = new ArrayList<>();
+		 
+		 SemiAndFinalsDTO semi1Data = new SemiAndFinalsDTO();
+		 semi1Data.setPhoto1(mapOfUserAndPics.get(semi1.getPlayer1()));
+		 semi1Data.setPhoto2(mapOfUserAndPics.get(semi1.getPlayer2()));
+		 semi1Data.setPhoto3(mapOfUserAndPics.get(semi1.getPlayer3()));
+		 semi1Data.setPhoto4(mapOfUserAndPics.get(semi1.getPlayer4()));
+		 semi1Data.setWinner(semi1.getWinner1());
+		 semi1Data.setSecond(semi1.getWinner2());
+
+		 SemiAndFinalsDTO semi2Data = new SemiAndFinalsDTO();
+		 semi2Data.setPhoto1(mapOfUserAndPics.get(semi2.getPlayer1()));
+		 semi2Data.setPhoto2(mapOfUserAndPics.get(semi2.getPlayer2()));
+		 semi2Data.setPhoto3(mapOfUserAndPics.get(semi2.getPlayer3()));
+		 semi2Data.setPhoto4(mapOfUserAndPics.get(semi2.getPlayer4()));
+		 semi2Data.setWinner(semi2.getWinner1());
+		 semi2Data.setSecond(semi2.getWinner2());
+		 
+		list.add(semi1Data);
+		list.add(semi2Data);
+		return list;
+	}
+
+	public SemiAndFinalsDTO getFinalsData() {
+		
+		SemiAndFinalsDTO finals = new SemiAndFinalsDTO();
+		SemiAndFinals finalsFromDB =  semiAndFinals.get(2);
+
+		finals.setPhoto1(mapOfUserAndPics.get(finalsFromDB.getPlayer1()));
+		finals.setPhoto2(mapOfUserAndPics.get(finalsFromDB.getPlayer2()));
+		finals.setPhoto3(mapOfUserAndPics.get(finalsFromDB.getPlayer3()));
+		finals.setPhoto4(mapOfUserAndPics.get(finalsFromDB.getPlayer4()));
+		finals.setWinnerName(finalsFromDB.getWinner1());
+		finals.setWinnerPic(mapOfUserAndPics.get(finalsFromDB.getWinner1()));
+		return finals;
+	};
 }

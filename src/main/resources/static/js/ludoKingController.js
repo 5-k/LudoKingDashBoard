@@ -4,9 +4,22 @@ webApp.controller('ludoKingController', function($scope,service,$http ,$location
 	$scope.previousMatches = [];
 	$scope.UpcommingMatches = [];
 	$scope.leaders=[];
-
+	$scope.semifinal1 = {};
+	$scope.semifinal2 = {};
+	$scope.finals = {};
 	
-       
+	
+	service.getSemifinalScores().then(function(data) {
+		console.log(data)
+		$scope.semifinal1 = data.data[0];
+		$scope.semifinal2 = data.data[1];
+	});
+
+	service.getFinalScores().then(function(data) {
+		console.log(data)
+		$scope.finals = data.data;
+	});
+
         service.getleaderBoard().then(function(data) {
 			 console.log(data);
 			 $scope.tableData = data.data;
@@ -39,7 +52,7 @@ webApp.controller('ludoKingController', function($scope,service,$http ,$location
         
         service.getPreviousMatches().then(function(data) {
 			console.log(data);
-			 $scope.previousMatches = data.data;
+			$scope.previousMatches = data.data;
 		 },function(error) {
 			
 			console.log(error)
