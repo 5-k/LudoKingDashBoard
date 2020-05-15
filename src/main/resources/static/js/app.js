@@ -8,12 +8,12 @@ webApp.config(function ($routeProvider) {
 		controllerAs: 'vm'
 	})
      .when('/ludoking', {
-         controller: 'ludoKingController',
-         templateUrl: 'views/ludoking.html',
+         controller: 'ludoKing2Controller',
+         templateUrl: 'views/ludoking2.html',
          controllerAs: 'vm'
-     }).when('/ludoking2', {
-		controller: 'ludoKing2Controller',
-		templateUrl: 'views/ludoking2.html',
+     }).when('/ludoking1', {
+		controller: 'ludoKingController',
+		templateUrl: 'views/ludoking.html',
 		controllerAs: 'vm'
 	})
     .otherwise({ redirectTo: '/' })

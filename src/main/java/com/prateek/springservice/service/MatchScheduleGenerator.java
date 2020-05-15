@@ -48,27 +48,108 @@ public class MatchScheduleGenerator {
         mapOfUserAndMatchCount.put("Anita", 0);
         mapOfUserAndMatchCount.put("Pranjal", 0);
 
+        int count = 0;
+        int statrDate= 16;
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
         Calendar calendar = Calendar.getInstance();
-        calendar.set(2020, 5, 16);
+        calendar.set(2020, 4, statrDate);
+        calendar.set(Calendar.HOUR_OF_DAY, 14);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+
         
-        Date date = new Date();
-        date.setHours(14);
-        date.setMinutes(0);
-        date.setSeconds(0);
-        calendar.setTime(date);
-
-
         List<List<String>> matches = getMatches(mapOfUserAndKeys,mapOfUserAndMatchCount);
-        for(List<String> list: matches) {
-            Map<String,Object> map = new HashMap<>();
-            map.put("user1", list.get(0));
-            map.put("user2", list.get(1));
-            map.put("user3", list.get(2));
-            map.put("user4", list.get(3));
-            map.put("version", 2);
+        List<Map<String,Object>> listOfMatch = new ArrayList<>();
+        int countOfI = 0;
+        int i =0 ;
+        for(; i<matches.size();) {
+
+            if ((calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY)  || (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY)) {  
+                calendar.set(Calendar.HOUR_OF_DAY, 14);
+                calendar.set(Calendar.MINUTE, 0);
+                calendar.set(Calendar.SECOND, 0);
+                listOfMatch.add(putInMap(matches.get(i), calendar,sdf));
+                countOfI+=1;
+                if(i != matches.size() -1) {
+                    calendar.set(Calendar.HOUR_OF_DAY, 18);
+                    calendar.set(Calendar.MINUTE, 0);
+                    calendar.set(Calendar.SECOND, 0);
+                    listOfMatch.add(putInMap(matches.get(i+1), calendar,sdf));
+                    countOfI+=1;
+                } else {
+                    break;
+                }
+
+                if(i != matches.size() -1) {
+                    calendar.set(Calendar.HOUR_OF_DAY, 20);
+                    calendar.set(Calendar.MINUTE, 0);
+                    calendar.set(Calendar.SECOND, 0);
+                    listOfMatch.add(putInMap(matches.get(i+2), calendar,sdf));
+                    countOfI+=1;
+                } else {
+                    break;
+                }
+                
+                
+            } else {
+                calendar.set(Calendar.HOUR_OF_DAY, 16);
+                calendar.set(Calendar.MINUTE, 0);
+                calendar.set(Calendar.SECOND, 0);
+                listOfMatch.add(putInMap(matches.get(i), calendar,sdf));
+                countOfI+=1;
+                if(i != matches.size() -1) {
+                    calendar.set(Calendar.HOUR_OF_DAY, 20);
+                    calendar.set(Calendar.MINUTE, 0);
+                    calendar.set(Calendar.SECOND, 0);
+
+                    listOfMatch.add(putInMap(matches.get(i+1), calendar,sdf));
+                    countOfI+=1;
+                } else {
+                    break;
+                }
+            }
+
+            i =countOfI;
+            statrDate = (statrDate+1)%31;
+            calendar.set(2020, 5, statrDate);
         }
-       
+        
+        System.out.println("[");
+        int j =0,k=0;
+       for(Map<String,Object> cur : listOfMatch) {
+        System.out.print("{");
+           for(Map.Entry<String,Object> entry: cur.entrySet()) {
+               System.out.print(entry.getKey());
+               System.out.print(" : ");
+               System.out.print(entry.getValue());
+               if(k< 5) {
+                System.out.print(",");
+               }
+               k++;
+           }
+           k=0;
+           System.out.print("}");
+           if(j<cur.size()-1) {
+            System.out.print(",");
+           }
+           System.out.println();
+           j++;
+       }
+       System.out.println("]");
+    }
+
+    private static Map<String,Object> putInMap(List<String> list,Calendar date, SimpleDateFormat sdf) {
+        Map<String,Object> map = new HashMap<>();
+            map.put("\"user1\"", "\""+list.get(0)+"\"");
+            map.put("\"user2\"", "\""+list.get(1)+"\"");
+            map.put("\"user3\"", "\""+list.get(2)+"\"");
+            map.put("\"user4\"", "\""+list.get(3)+"\"");
+            map.put("\"version\"", 2);
+            map.put("\"matchDate\"", "\""+sdf.format(date.getTime())+"\"");
+            
+            
+            return map;
     }
 
     private static List<List<String>> getMatches(Map<String, Integer> mapOfUserAndKeys,

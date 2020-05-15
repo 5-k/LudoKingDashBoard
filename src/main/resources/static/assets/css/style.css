@@ -345,6 +345,14 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+#hero2 {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/Photos1/ludo2.jpg") top center;
+  background-size: cover;
+  position: relative;
+}
+
 #hero:before {
   content: "";
   background: rgba(0, 0, 0, 0.6);
