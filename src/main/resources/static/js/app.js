@@ -11,7 +11,11 @@ webApp.config(function ($routeProvider) {
          controller: 'ludoKingController',
          templateUrl: 'views/ludoking.html',
          controllerAs: 'vm'
-     })
+     }).when('/ludoking2', {
+		controller: 'ludoKing2Controller',
+		templateUrl: 'views/ludoking2.html',
+		controllerAs: 'vm'
+	})
     .otherwise({ redirectTo: '/' })
     ;
 	})

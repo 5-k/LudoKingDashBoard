@@ -32,17 +32,22 @@ public class MatchResult {
     
 	@Column(name="winner4",nullable=false)
     private String winner4;
+    
+    @Column(name="version")
+    private int version;
+
 
     public MatchResult() {
     }
 
-    public MatchResult(int id, int matchid, String winner1, String winner2, String winner3, String winner4) {
+    public MatchResult(int id, int matchid, String winner1, String winner2, String winner3, String winner4, int version) {
         this.id = id;
         this.matchid = matchid;
         this.winner1 = winner1;
         this.winner2 = winner2;
         this.winner3 = winner3;
         this.winner4 = winner4;
+        this.version = version;
     }
 
     public int getId() {
@@ -93,6 +98,14 @@ public class MatchResult {
         this.winner4 = winner4;
     }
 
+    public int getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
     public MatchResult id(int id) {
         this.id = id;
         return this;
@@ -123,6 +136,11 @@ public class MatchResult {
         return this;
     }
 
+    public MatchResult version(int version) {
+        this.version = version;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -131,12 +149,12 @@ public class MatchResult {
             return false;
         }
         MatchResult matchResult = (MatchResult) o;
-        return id == matchResult.id && matchid == matchResult.matchid && Objects.equals(winner1, matchResult.winner1) && Objects.equals(winner2, matchResult.winner2) && Objects.equals(winner3, matchResult.winner3) && Objects.equals(winner4, matchResult.winner4);
+        return id == matchResult.id && matchid == matchResult.matchid && Objects.equals(winner1, matchResult.winner1) && Objects.equals(winner2, matchResult.winner2) && Objects.equals(winner3, matchResult.winner3) && Objects.equals(winner4, matchResult.winner4) && version == matchResult.version;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, matchid, winner1, winner2, winner3, winner4);
+        return Objects.hash(id, matchid, winner1, winner2, winner3, winner4, version);
     }
 
     @Override
@@ -148,6 +166,7 @@ public class MatchResult {
             ", winner2='" + getWinner2() + "'" +
             ", winner3='" + getWinner3() + "'" +
             ", winner4='" + getWinner4() + "'" +
+            ", version='" + getVersion() + "'" +
             "}";
     }
 

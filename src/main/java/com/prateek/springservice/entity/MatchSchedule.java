@@ -31,6 +31,9 @@ public class MatchSchedule {
 	@Column(name="user4",nullable=false)
     private String user4;
 
+    @Column(name="version")
+    private int version;
+
     @Column(name="matchDateAndTime",nullable=false)
     private Date matchDateAndTime; //yyyy-MM-dd HH:MM:ss
 	
@@ -38,12 +41,13 @@ public class MatchSchedule {
     public MatchSchedule() {
     }
 
-    public MatchSchedule(int id, String user1, String user2, String user3, String user4, Date matchDateAndTime) {
+    public MatchSchedule(int id, String user1, String user2, String user3, String user4, int version, Date matchDateAndTime) {
         this.id = id;
         this.user1 = user1;
         this.user2 = user2;
         this.user3 = user3;
         this.user4 = user4;
+        this.version = version;
         this.matchDateAndTime = matchDateAndTime;
     }
 
@@ -87,6 +91,14 @@ public class MatchSchedule {
         this.user4 = user4;
     }
 
+    public int getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
     public Date getMatchDateAndTime() {
         return this.matchDateAndTime;
     }
@@ -120,6 +132,11 @@ public class MatchSchedule {
         return this;
     }
 
+    public MatchSchedule version(int version) {
+        this.version = version;
+        return this;
+    }
+
     public MatchSchedule matchDateAndTime(Date matchDateAndTime) {
         this.matchDateAndTime = matchDateAndTime;
         return this;
@@ -133,12 +150,12 @@ public class MatchSchedule {
             return false;
         }
         MatchSchedule matchSchedule = (MatchSchedule) o;
-        return id == matchSchedule.id && Objects.equals(user1, matchSchedule.user1) && Objects.equals(user2, matchSchedule.user2) && Objects.equals(user3, matchSchedule.user3) && Objects.equals(user4, matchSchedule.user4) && Objects.equals(matchDateAndTime, matchSchedule.matchDateAndTime);
+        return id == matchSchedule.id && Objects.equals(user1, matchSchedule.user1) && Objects.equals(user2, matchSchedule.user2) && Objects.equals(user3, matchSchedule.user3) && Objects.equals(user4, matchSchedule.user4) && version == matchSchedule.version && Objects.equals(matchDateAndTime, matchSchedule.matchDateAndTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user1, user2, user3, user4, matchDateAndTime);
+        return Objects.hash(id, user1, user2, user3, user4, version, matchDateAndTime);
     }
 
     @Override
@@ -149,8 +166,10 @@ public class MatchSchedule {
             ", user2='" + getUser2() + "'" +
             ", user3='" + getUser3() + "'" +
             ", user4='" + getUser4() + "'" +
+            ", version='" + getVersion() + "'" +
             ", matchDateAndTime='" + getMatchDateAndTime() + "'" +
             "}";
     }
+
     
 }

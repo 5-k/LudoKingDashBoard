@@ -1,4 +1,4 @@
-webApp.controller('ludoKingController', function($scope,service,$http ,$location,$rootScope) {
+webApp.controller('ludoKing2Controller', function($scope,service,$http ,$location,$rootScope) {
   
 	$scope.tableData= [];
 	$scope.previousMatches = [];
@@ -9,18 +9,18 @@ webApp.controller('ludoKingController', function($scope,service,$http ,$location
 	$scope.finals = {};
 	
 	
-	service.getSemifinalScores(1).then(function(data) {
+	service.getSemifinalScores(2).then(function(data) {
 		console.log(data)
 		$scope.semifinal1 = data.data[0];
 		$scope.semifinal2 = data.data[1];
 	});
 
-	service.getFinalScores(1).then(function(data) {
+	service.getFinalScores(2).then(function(data) {
 		console.log(data)
 		$scope.finals = data.data;
 	});
 
-        service.getleaderBoard(1).then(function(data) {
+        service.getleaderBoard(2).then(function(data) {
 			 console.log(data);
 			 $scope.tableData = data.data;
 			 leaderData= [];
@@ -50,7 +50,7 @@ webApp.controller('ludoKingController', function($scope,service,$http ,$location
 
 	
         
-        service.getPreviousMatches(1).then(function(data) {
+        service.getPreviousMatches(2).then(function(data) {
 			console.log(data);
 			$scope.previousMatches = data.data;
 		 },function(error) {
@@ -58,7 +58,7 @@ webApp.controller('ludoKingController', function($scope,service,$http ,$location
 			console.log(error)
 		 })
         
-        service.getUpcomingMatches(1).then(function(data) {
+        service.getUpcomingMatches(2).then(function(data) {
 			console.log(data);
 			 $scope.UpcommingMatches = data.data;
 		 },function(error) {

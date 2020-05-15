@@ -1,0 +1,700 @@
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1  class="logo mr-auto"><a >Ludo Championshp 2020</a></h1>
+    
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+        
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <section id="hero">
+    <div class="hero-container">
+      <h3>Welcome to <strong>Ludo King</strong></h3>
+      <h1>We are Ultimate Ludo King Championship Partners</h1>
+      <a href="" class="btn-get-started scrollto">Just Quarantine Things</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <h3>It all started with the quarantine</span></h3>
+          <p>Little did we know about the COVID 19 Lockdwon would hit us so hard that we won't be able to get out and do the regular stuff. Hence we needed something exciting in this phase and thus we have this championship.</p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              This Championship will have multiple matches along multiple phases.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Daily Matches</li>
+              <li><i class="ri-check-double-line"></i> Leaders Qualify to Quater and Semifinals</li>
+              <li><i class="ri-check-double-line"></i> Grand Finale when the lockdown ends</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Here you can Organize and record dai`ly matches and scores
+              Create new matches<br/>
+              Record Winning Scores <br/>  
+            </p>
+            <a class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    
+     <!-- ======= Services Section ======= -->
+     <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>LeaderBoard</h2>
+          <h3>Here is the latest LeaderBoard<span>(Champtionship XOXO)</span></h3>
+          <p>May the force be with you</p>
+        </div>
+
+        <div class="row">
+          <table class="table table-primary table-striped" >
+            <thead>
+                <tr style="font:bold; font-size: 16px; text-align: center;">
+                    <th>Contestant</th>
+                    <th>Score</th>
+                    <th>Games Played</th>
+                    <th>Games Won</th>
+                    <th>Games Lost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success" ng-repeat="data in tableData"  style=" font-size: 13px; text-align: center;">
+                    <td>{{data.name}}</td>
+                    <td>{{data.points}}</td>
+                    <td>{{data.played}}</td>
+                    <td>{{data.won}}</td>
+                    <td>{{data.lost}}</td>
+                </tr>
+               
+            </tbody>
+            </table>
+
+        </div>
+
+
+
+
+      </div>
+    </section><!-- End Services Section -->
+  
+      <!-- ======= Team Section ======= -->
+      <section id="team" class="team">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Current Top 3 Leaders</h2>
+            <h3>Top 3 on <span> Leaderboards</span></h3>
+          </div>
+  
+          <div class="row">
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{{leaders[0].photo}}" class="img-fluid" alt="">
+                </div>
+                <div class="member-info">
+                  <h4>{{leaders[0].name}}</h4>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{{leaders[1].photo}}" class="img-fluid" alt="">
+                  
+                </div>
+                <div class="member-info">
+                  <h4>{{leaders[1].name}}</h4>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{{leaders[2].photo}}" class="img-fluid" alt="">
+                </div>
+                <div class="member-info">
+                  <h4>{{leaders[2].name}}</h4>
+                </div>
+              </div>
+            </div>
+  
+  
+          </div>
+    
+        </div>
+      </section><!-- End Current Leader Section -->
+
+
+      
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="text-center">
+          <h3>There Shall Be Only One Leader</h3>
+          <p> When you win, say nothing. When you lose, say less </p>
+          <a class="cta-btn" >Learn from yesterday, live for today and have hope for tomorrow.</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Ludo Championship</h2>
+          <h3>Our Players <span>Team</span></h3>
+          <p>For the one's who dare!!!</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/player5_prateek.jpg" class="img-fluid" alt="">
+                <div class="social">
+                 
+                  <a href="https://www.facebook.com/prateek18061992/"><i class="icofont-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Prateek (Pangra)</h4>
+                <span><b>The Ultimate Winner</b><br/>
+                  Jiski Sab Goti Kat jaatein hain but jeetega wohi </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/player6_hrishi.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/hkt007"><i class="icofont-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Hrishi (kesh)</h4>
+                <span><b>The Hawk Eye</b><br/>
+                  Fights, Lives and Then Details
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/player7_Sonal.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/sonal.chauha.9"><i class="icofont-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sonal (Bhabhi)</h4>
+                <span><b>The Silent Killer</b><br/>
+
+                  Moves in Silence and Wins by Luck </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/Player1_Nishant.jpg" class="img-fluid" alt="">
+                <div class="social">
+                 
+                  <a href="https://www.facebook.com/nishant.k.verma.1"><i class="icofont-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Nishant (Mota)</h4>
+                <span><b>The Risk Taker</b><br/>
+                  The One with spelling mistakes - Waqar Bhai </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/Player2_Puchi.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/arpit.tyagi2011"><i class="icofont-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Arpit (Puchi)</h4>
+                <span><b>The Ultimate Roaster</b><br/>
+                  Goti Katega aur ek sarcastic comment b dega sath me
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/Player8_Shubham.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/shubham.tyagi.524596"><i class="icofont-facebook"></i></a>
+                  
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Shubham (shubham)</h4>
+                <span>
+                  <b>The Perfectionist </b><br/>
+                  Plans For Days, Decide in Hours, Moves in minutes and Dies in Seconds. Targeted the most but on beast mode is unstoppable.
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/player_eddy.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/profile.php?id=100001107013640"><i class="icofont-facebook"></i></a>
+ 
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Aditya (Eddy)</h4>
+                <span>
+                  <b>The Cunning One </b><br/>
+                  The Slayer who dont believe in winning, he just enjoys to cut the 'Pakki Goti' (Calls Himself Ludo King, But Luck ain't on his side)
+                </span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/Player9_Annie.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/Aniesmystery"><i class="icofont-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Anita (Annie)</h4>
+                <span><b>The Back Stabber</b><br/>
+                  Bolegi Nai Kategi, but bar bar kategi.!!!
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/meenakshi.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/minisaras7"><i class="icofont-facebook"></i></a>
+
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Meenakshi (Mini)</h4>
+                <span><b>The Batameez Aurat (Papa Ki Pari)</b><br/>
+
+                  Bulati Hai, Magar Jane Ka Nai (Kaategi)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+
+        
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="assets/img/Photos1/player10_pranjal.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/profile.php?id=100001107013640"><i class="icofont-facebook"></i></a>
+ 
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Pranjal (Scientist)</h4>
+                <span>
+                  <b>Scientist </b><br/>
+                  Calculates Scientifcally the amount needed on the nice and modies the future accordingly. Works some time.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+   
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features" ng-if="false">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-6 col-6">
+            <div class="icon-box">
+              <i class="ri-store-line" style="color: #ffbb2c;"></i>
+              <h3><a href="">Lorem Ipsum</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="icon-box">
+              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+              <h3><a href="">Dolor Sitema</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+              <h3><a href="">Sed perspiciatis</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+              <h3><a href="">Magni Dolores</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-database-2-line" style="color: #47aeff;"></i>
+              <h3><a href="">Nemo Enim</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+              <h3><a href="">Eiusmod Tempor</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+              <h3><a href="">Midela Teren</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+              <h3><a href="">Pira Neve</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-anchor-line" style="color: #b2904f;"></i>
+              <h3><a href="">Dirada Pack</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-disc-line" style="color: #b20969;"></i>
+              <h3><a href="">Moton Ideal</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-base-station-line" style="color: #ff5828;"></i>
+              <h3><a href="">Verdo Park</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 mt-4">
+            <div class="icon-box">
+              <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
+              <h3><a href="">Flavor Nivelanda</a></h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Match Schedule</h2>
+          <h3>Upcomming <span>Matches</span></h3>
+          <p>Check it out</p>
+        </div>
+
+      
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app" ng-repeat="currData in UpcommingMatches" >
+            <h2><b>{{currData.matchName}}</b></h2>
+            <p><b>{{currData.matchDate}} &nbsp; {{currData.matchTime}}</b></p>
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="margin-top:10px">
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{currData.photo1}}" style="width:100%;height:100%"/>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6" >
+              <img   ng-src="{{currData.photo2}}" style="width:100%;height:100%"/>
+            </div>
+          </div>
+          <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="margin-top:10px">
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6"  >
+              <img   ng-src="{{currData.photo3}}" style="width:100%;height:100%"/>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6" >
+              <img   ng-src="{{currData.photo4}}" style="width:100%;height:100%"/>
+            </div>
+          </div>
+            <div class="portfolio-info" ng-if="currData.winner!= null && currData.winner!= undefined && currData.winner.length>0">
+              <h4>{{currData.matchName}}</h4>
+              <ul>
+              <li><p><b>Date:</b>&nbsp;{{currData.matchDate}}</p></li>
+              <li><p><b>Time :</b>&nbsp;{{currData.matchTime}}</p></li>
+            </ul>
+          </div>
+          
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+
+      <!-- ======= Portfolio Section ======= -->
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Match Schedule</h2>
+            <h3>Result of previous <span>Matches</span></h3>
+            <p>Check it out</p>
+          </div>
+  
+        
+  
+          <div class="row portfolio-container">
+  
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app" ng-repeat="currData in previousMatches" >
+              <h2><b>{{currData.matchName}}</b></h2>
+              <p><b>{{currData.matchDate}} &nbsp; {{currData.matchTime}}</b></p>
+              <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="margin-top:10px">
+              
+                <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6" ng-if="currData.user1!= 'TBA' ">
+                <img  ng-src="{{currData.photo1}}" style="width:100%;height:100%"/>
+              </div>
+              <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6"  ng-if="currData.user2!= 'TBA' ">
+                <img ng-src="{{currData.photo2}}" style="width:100%;height:100%"/>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="margin-top:10px">
+
+              <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6"  ng-if="currData.user3!= 'TBA' ">
+                <img   ng-src="{{currData.photo3}}" style="width:100%;height:100%"/>
+              </div>
+              <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6" ng-if="currData.user4!= 'TBA' ">
+                <img  ng-src="{{currData.photo4}}" style="width:100%;height:100%" />
+              </div>
+
+            </div>
+              <div class="portfolio-info" ng-if="currData.winner!= null && currData.winner!= undefined && currData.winner.length > 0">
+                <h4>{{currData.matchName}}</h4>
+                <ul>
+                <li ng-if="currData.winner!= 'TBA'"><p><b>Winner:</b>&nbsp;{{currData.winner}}</p></li>
+                <li ng-if="currData.firstrunnerunnerup!= 'TBA'"><p><b>Second:</b>&nbsp;{{currData.firstrunnerunnerup}}</p></li>
+                <li ng-if="currData.secondrunnerup!= 'TBA' "><p><b>Third :</b>&nbsp;{{currData.secondrunnerup}}</p></li>
+                <li ng-if="currData.lost!= 'TBA'"><p><b>Lost  :</b>&nbsp;{{currData.lost}}</p></li>
+              </ul>
+            </div>
+            
+          </div>
+  
+        </div>
+      </section><!-- End Portfolio Section -->
+  
+
+
+    <!-- ======= Portfolio Section ======= -->
+  
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>F.A.Q</h2>
+          <h3>Frequently Asked <span>Questions</span></h3>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <a data-toggle="collapse" class="" href="#faq1">What do i do If I lose <i class="icofont-simple-up"></i></a>
+            <div id="faq1" class="collapse show" data-parent=".faq-list">
+              <p>
+                Try Again. Dont try to find a way to invalidate the match.
+              </p>
+            </div>
+          </li>
+
+
+        </ul>
+
+      </div>
+    </section><!-- End F.A.Q Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3>Contact <span>Us</span></h3>
+         </div>
+
+        <div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.4264710129437!2d77.72497471595946!3d28.945072659438328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c635f6a15ce57%3A0x52379ba36c74a817!2sL%20Block%2C%20Shastri%20Nagar%2C%20Meerut%2C%20Uttar%20Pradesh%20250004!5e0!3m2!1sen!2sin!4v1587922168456!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>L Block, Shastri Nagar, Meerut</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>prateek@snappp.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 7503 276 712</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0" ng-if="false">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Snappp</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+           Designed by <a href="https://www.linkedin.com/in/prateek-mishra-61aa4658/">Prateek Mishra</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://www.facebook.com/prateek18061992/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/prateekm18/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/prateek-mishra-61aa4658/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->

@@ -22,10 +22,12 @@ public class MatchScheduleAndResultDTO {
 		 private String photo3;   //assets/img/Photos1/player2_Puchi.jpg 
 		 private String photo4;
 
+         private int version;
+
     public MatchScheduleAndResultDTO() {
     }
 
-    public MatchScheduleAndResultDTO(int matchId, int matchResultId, String user1, String user2, String user3, String user4, String winner, String firstrunnerunnerup, String secondrunnerup, String lost, String matchName, String matchDate, String matchTime, String photo1, String photo2, String photo3, String photo4) {
+    public MatchScheduleAndResultDTO(int matchId, int matchResultId, String user1, String user2, String user3, String user4, String winner, String firstrunnerunnerup, String secondrunnerup, String lost, String matchName, String matchDate, String matchTime, String photo1, String photo2, String photo3, String photo4, int version) {
         this.matchId = matchId;
         this.matchResultId = matchResultId;
         this.user1 = user1;
@@ -43,6 +45,7 @@ public class MatchScheduleAndResultDTO {
         this.photo2 = photo2;
         this.photo3 = photo3;
         this.photo4 = photo4;
+        this.version = version;
     }
 
     public int getMatchId() {
@@ -181,6 +184,14 @@ public class MatchScheduleAndResultDTO {
         this.photo4 = photo4;
     }
 
+    public int getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
     public MatchScheduleAndResultDTO matchId(int matchId) {
         this.matchId = matchId;
         return this;
@@ -266,6 +277,11 @@ public class MatchScheduleAndResultDTO {
         return this;
     }
 
+    public MatchScheduleAndResultDTO version(int version) {
+        this.version = version;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -274,12 +290,12 @@ public class MatchScheduleAndResultDTO {
             return false;
         }
         MatchScheduleAndResultDTO matchScheduleAndResultDTO = (MatchScheduleAndResultDTO) o;
-        return matchId == matchScheduleAndResultDTO.matchId && matchResultId == matchScheduleAndResultDTO.matchResultId && Objects.equals(user1, matchScheduleAndResultDTO.user1) && Objects.equals(user2, matchScheduleAndResultDTO.user2) && Objects.equals(user3, matchScheduleAndResultDTO.user3) && Objects.equals(user4, matchScheduleAndResultDTO.user4) && Objects.equals(winner, matchScheduleAndResultDTO.winner) && Objects.equals(firstrunnerunnerup, matchScheduleAndResultDTO.firstrunnerunnerup) && Objects.equals(secondrunnerup, matchScheduleAndResultDTO.secondrunnerup) && Objects.equals(lost, matchScheduleAndResultDTO.lost) && Objects.equals(matchName, matchScheduleAndResultDTO.matchName) && Objects.equals(matchDate, matchScheduleAndResultDTO.matchDate) && Objects.equals(matchTime, matchScheduleAndResultDTO.matchTime) && Objects.equals(photo1, matchScheduleAndResultDTO.photo1) && Objects.equals(photo2, matchScheduleAndResultDTO.photo2) && Objects.equals(photo3, matchScheduleAndResultDTO.photo3) && Objects.equals(photo4, matchScheduleAndResultDTO.photo4);
+        return matchId == matchScheduleAndResultDTO.matchId && matchResultId == matchScheduleAndResultDTO.matchResultId && Objects.equals(user1, matchScheduleAndResultDTO.user1) && Objects.equals(user2, matchScheduleAndResultDTO.user2) && Objects.equals(user3, matchScheduleAndResultDTO.user3) && Objects.equals(user4, matchScheduleAndResultDTO.user4) && Objects.equals(winner, matchScheduleAndResultDTO.winner) && Objects.equals(firstrunnerunnerup, matchScheduleAndResultDTO.firstrunnerunnerup) && Objects.equals(secondrunnerup, matchScheduleAndResultDTO.secondrunnerup) && Objects.equals(lost, matchScheduleAndResultDTO.lost) && Objects.equals(matchName, matchScheduleAndResultDTO.matchName) && Objects.equals(matchDate, matchScheduleAndResultDTO.matchDate) && Objects.equals(matchTime, matchScheduleAndResultDTO.matchTime) && Objects.equals(photo1, matchScheduleAndResultDTO.photo1) && Objects.equals(photo2, matchScheduleAndResultDTO.photo2) && Objects.equals(photo3, matchScheduleAndResultDTO.photo3) && Objects.equals(photo4, matchScheduleAndResultDTO.photo4) && version == matchScheduleAndResultDTO.version;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(matchId, matchResultId, user1, user2, user3, user4, winner, firstrunnerunnerup, secondrunnerup, lost, matchName, matchDate, matchTime, photo1, photo2, photo3, photo4);
+        return Objects.hash(matchId, matchResultId, user1, user2, user3, user4, winner, firstrunnerunnerup, secondrunnerup, lost, matchName, matchDate, matchTime, photo1, photo2, photo3, photo4, version);
     }
 
     @Override
@@ -302,8 +318,7 @@ public class MatchScheduleAndResultDTO {
             ", photo2='" + getPhoto2() + "'" +
             ", photo3='" + getPhoto3() + "'" +
             ", photo4='" + getPhoto4() + "'" +
+            ", version='" + getVersion() + "'" +
             "}";
     }
-    
-         
 }

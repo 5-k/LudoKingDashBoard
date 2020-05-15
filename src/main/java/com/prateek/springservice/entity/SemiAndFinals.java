@@ -38,10 +38,14 @@ public class SemiAndFinals {
     @Column(name="winner2")
     private String winner2;
 
+    @Column(name="version")
+    private int version;
+
+
     public SemiAndFinals() {
     }
 
-    public SemiAndFinals(int id, String name, String player1, String player2, String player3, String player4, String winner1, String winner2) {
+    public SemiAndFinals(int id, String name, String player1, String player2, String player3, String player4, String winner1, String winner2, int version) {
         this.id = id;
         this.name = name;
         this.player1 = player1;
@@ -50,6 +54,7 @@ public class SemiAndFinals {
         this.player4 = player4;
         this.winner1 = winner1;
         this.winner2 = winner2;
+        this.version = version;
     }
 
     public int getId() {
@@ -116,6 +121,14 @@ public class SemiAndFinals {
         this.winner2 = winner2;
     }
 
+    public int getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
     public SemiAndFinals id(int id) {
         this.id = id;
         return this;
@@ -156,6 +169,11 @@ public class SemiAndFinals {
         return this;
     }
 
+    public SemiAndFinals version(int version) {
+        this.version = version;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -164,12 +182,12 @@ public class SemiAndFinals {
             return false;
         }
         SemiAndFinals semiAndFinals = (SemiAndFinals) o;
-        return id == semiAndFinals.id && Objects.equals(name, semiAndFinals.name) && Objects.equals(player1, semiAndFinals.player1) && Objects.equals(player2, semiAndFinals.player2) && Objects.equals(player3, semiAndFinals.player3) && Objects.equals(player4, semiAndFinals.player4) && Objects.equals(winner1, semiAndFinals.winner1) && Objects.equals(winner2, semiAndFinals.winner2);
+        return id == semiAndFinals.id && Objects.equals(name, semiAndFinals.name) && Objects.equals(player1, semiAndFinals.player1) && Objects.equals(player2, semiAndFinals.player2) && Objects.equals(player3, semiAndFinals.player3) && Objects.equals(player4, semiAndFinals.player4) && Objects.equals(winner1, semiAndFinals.winner1) && Objects.equals(winner2, semiAndFinals.winner2) && version == semiAndFinals.version;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, player1, player2, player3, player4, winner1, winner2);
+        return Objects.hash(id, name, player1, player2, player3, player4, winner1, winner2, version);
     }
 
     @Override
@@ -183,6 +201,7 @@ public class SemiAndFinals {
             ", player4='" + getPlayer4() + "'" +
             ", winner1='" + getWinner1() + "'" +
             ", winner2='" + getWinner2() + "'" +
+            ", version='" + getVersion() + "'" +
             "}";
     }
 

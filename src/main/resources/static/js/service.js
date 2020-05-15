@@ -1,11 +1,20 @@
 webApp.service('service', function($http,$q,$log,$rootScope){
     
-    this.getleaderBoard = function() {
+    this.getleaderBoard = function(version) {
        
+        var uri= '';
+        if(version == 1) {
+            uri = '/v1/api/leaderBoard';
+        } else if(version == 2) {
+            uri = '/v2/api/leaderBoard';
+        } else if(version == 3) {
+            uri = '/v3/api/leaderBoard';
+        }
+
         var deferred = $q.defer();
         $http({
             method:"GET", 
-            url:"/api/leaderBoard"
+            url:uri
         }).
         then(function(data,status,header,config){
             deferred.resolve(data);
@@ -16,12 +25,21 @@ webApp.service('service', function($http,$q,$log,$rootScope){
         return deferred.promise
     };
     
-    this.getFinalScores = function() {
+    this.getFinalScores = function(version) {
+       
+        var uri= '';
+        if(version == 1) {
+            uri = '/v1/api/finals';
+        } else if(version == 2) {
+            uri = '/v2/api/finals';
+        } else if(version == 3) {
+            uri = '/v3/api/finals';
+        }
        
         var deferred = $q.defer();
         $http({
             method:"GET", 
-            url:"/api/finals"
+            url: uri
         }).
         then(function(data,status,header,config){
             deferred.resolve(data);
@@ -32,12 +50,21 @@ webApp.service('service', function($http,$q,$log,$rootScope){
         return deferred.promise
     };
     
-    this.getSemifinalScores = function() {
+    this.getSemifinalScores = function(version) {
+       
+        var uri= '';
+        if(version == 1) {
+            uri = '/v1/api/semifinals';
+        } else if(version == 2) {
+            uri = '/v2/api/semifinals';
+        } else if(version == 3) {
+            uri = '/v3/api/semifinals';
+        }
        
         var deferred = $q.defer();
         $http({
             method:"GET", 
-            url:"/api/semifinals"
+            url: uri
         }).
         then(function(data,status,header,config){
             deferred.resolve(data);
@@ -48,12 +75,20 @@ webApp.service('service', function($http,$q,$log,$rootScope){
         return deferred.promise
 	};
 
-	this.getPreviousMatches = function() {
-        
+	this.getPreviousMatches = function(version) {
+       
+        var uri= '';
+        if(version == 1) {
+            uri = '/v1/api/previousMatches';
+        } else if(version == 2) {
+            uri = '/v2/api/previousMatches';
+        } else if(version == 3) {
+            uri = '/v3/api/previousMatches';
+        }
         var deferred = $q.defer();
         $http({
             method:"GET", 
-            url:"/api/previousMatches"
+            url: uri
         }).
         then(function(data,status,header,config){
             deferred.resolve(data);
@@ -64,12 +99,21 @@ webApp.service('service', function($http,$q,$log,$rootScope){
         return deferred.promise
 	};
 
-	this.getUpcomingMatches = function() {
+	this.getUpcomingMatches = function(version) {
+       
+        var uri= '';
+        if(version == 1) {
+            uri = '/v1/api/upcommingMatches';
+        } else if(version == 2) {
+            uri = '/v2/api/upcommingMatches';
+        } else if(version == 3) {
+            uri = '/v3/api/upcommingMatches';
+        }
         
         var deferred = $q.defer();
         $http({
             method:"GET", 
-            url:"/api/upcommingMatches"
+            url:uri
         }).
         then(function(data,status,header,config){
             deferred.resolve(data);
