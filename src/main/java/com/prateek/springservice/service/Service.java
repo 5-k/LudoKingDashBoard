@@ -155,7 +155,7 @@ public class Service {
 			}
 
 			int points = 0;
-			int win = 0, lost = 0, notplayed = 0;
+			int win = 0, lost = 0, notplayed = 0,totalMatches=0;
 			for (int j = 0; j < matchResults.size(); j++) {
 				MatchResult currentResult = matchResults.get(j);
 				if (version != currentResult.getVersion()) {
@@ -174,6 +174,7 @@ public class Service {
 				} else {
 					notplayed = notplayed + 1;
 				}
+				totalMatches= totalMatches+1;
 			}
 
 			leaderBoardDTO.setId(currentUser.getId());
@@ -181,7 +182,7 @@ public class Service {
 			leaderBoardDTO.setPoints(points);
 			leaderBoardDTO.setName(currentUser.getName());
 			leaderBoardDTO.setWon(win);
-			leaderBoardDTO.setPlayed(matchResults.size() - notplayed);
+			leaderBoardDTO.setPlayed(totalMatches - notplayed);
 			leaderBoardDTO.setPhoto(mapOfUserAndPics.get(currentUser.getName()));
 			leaderBoardDTOs.add(leaderBoardDTO);
 		}
