@@ -25,25 +25,28 @@
 
 
     
-  <!-- =======Ludolonf Seciotn ======= -->
+  <!-- =======Ludolong Seciotn ======= -->
   <section id="about" class="about" >
     <div class="container">
 
+      <div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <img  src="assets/img/Photos1/Sales_main_grande.jpg" style="width:100%;height:100%"/>
+      </div>
+    </div>
+
       <div class="section-title">
-        <h2>Champion vs Challenger(s)</h2>
-        <h3>Will he be able to defend his title?</span></h3>
+        <h3 style="font-size:50px">Champion vs Challenger(s)</h3>
+        <h2 style="font-size:40px">Will he be able to defend his title?</span></2>
       </div>
 
       <div class="row content">
         
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <img  src="assets/img/Photos1/Sales_main_grande.jpg" style="width:100%;height:100%"/>
-        </div>
-        <div class="col-lg-6  col-md-6 col-sm-6">
+        <div class="col-lg-6  col-md-6 col-sm-5 col-xs-5">
           <img  src="assets/img/Photos1/Player8_Shubham.jpg" style="width:100%;height:100%"/>
         </div>
 
-        <div class="col-lg-6  col-md-6 col-sm-6">
+        <div class="col-lg-6  col-md-6 col-sm-5 col-xs-5">
           <img  src="assets/img/Photos1/unknown.jpg" style="width:100%;height:100%"/>
         </div>
        
@@ -93,6 +96,111 @@
 
 
     
+    
+  <!-- =======finals Seciotn ======= -->
+  <section id="about" class="about" ng-if="finals != undefined && finals.photo1.length >0">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>We are in the End Game Now (Satuday, May the 2nd 2020)</h2>
+        <h3>Ludo 1.0 Finals</span></h3>
+        <p>Here we are with the finalist</p>
+      </div>
+
+      <div class="row content">
+        <div class="col-lg-3  col-md-3 col-sm-3"></div>
+
+        <div class="col-lg-6  col-md-6 col-sm-6">
+
+          <div class="col-lg-12 col-md-12 col-sm-12" ng-if="finals.winnerName!= 'TBA'">
+              <h3>
+                <p><span style="color:#b20969">Winner </span>: {{finals.winnerName}}</p>
+              </h3>
+          </div>
+          <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+            <img  ng-src="{{finals.photo1}}" style="width:100%;height:100%"/>
+          </div>
+          <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+            <img  ng-src="{{finals.photo2}}" style="width:100%;height:100%"/>
+          </div>
+          <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+            <img  ng-src="{{finals.photo3}}" style="width:100%;height:100%"/>
+          </div>
+          <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+            <img  ng-src="{{finals.photo4}}" style="width:100%;height:100%"/>
+          </div>
+
+        </div>
+       
+        <div class="col-lg-3  col-md-3 col-sm-3"></div>
+      </div>
+
+    </div>
+  </section><!-- End finals Seciotn -->
+
+  
+
+    <!-- =======Semifinals Seciotn ======= -->
+    <section id="about" class="about" ng-if="semifinal1 != undefined && semifinal2 != undefined &&
+    semifinal1.photo1.length >0 && semifinal2.photo1.length >0">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Thursday, 28th May 2020 8pm and 10pm IST</h2>
+          <h3>Ludo 2.0 Semifinals</span></h3>
+          <p>After a long week battle, 21 matches, hours of battles we are in end game now</p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6  col-md-6 col-sm-6" >
+
+            <div class="col-lg-12 col-md-12 col-sm-12" ng-if="semifinal1.winner.length >0">
+                <h3>
+                  <p><span style="color:#b20969">Winner </span>: {{semifinal1.winner}}</p>
+                  <p><span style="color:#b20969">Second </span>: {{semifinal1.second}}</p>
+                </h3>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{semifinal1.photo1}}" style="width:100%;height:100%"/>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{semifinal1.photo2}}" style="width:100%;height:100%"/>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{semifinal1.photo3}}" style="width:100%;height:100%"/>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{semifinal1.photo4}}" style="width:100%;height:100%"/>
+            </div>
+
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <div class="col-lg-12 col-md-12 col-sm-12" ng-if="semifinal2.winner.length >0">
+              <h3>
+                <p><span style="color:#b20969">Winner </span>: {{semifinal2.winner}}</p>
+                <p><span style="color:#b20969">Second </span>: {{semifinal2.second}}</p>
+              </h3>
+          </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{semifinal2.photo1}}" style="width:100%;height:100%"/>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{semifinal2.photo2}}" style="width:100%;height:100%"/>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{semifinal2.photo3}}" style="width:100%;height:100%"/>
+            </div>
+            <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
+              <img  ng-src="{{semifinal2.photo4}}" style="width:100%;height:100%"/>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Semifinals Seciotn -->
+
+
      <!-- ======= Services Section ======= -->
      <section id="services" class="services">
       <div class="container">

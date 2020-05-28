@@ -65,11 +65,11 @@ public class Service {
 		matchSchedules = matchScheduleRepository.findAll();
 		matchResults = matchResultRepository.findAll();
 		semiAndFinals = semifinalsAndFinalsRepo.findAll();
-
+		
 		mapOfUserAndPics.put("Aditya", "assets\\img\\Photos1\\player_eddy.jpg");
 		mapOfUserAndPics.put("Nishant", "assets\\img\\Photos1\\Player1_Nishant.jpg");
 		mapOfUserAndPics.put("Arpit", "assets\\img\\Photos1\\Player2_Puchi.jpg");
-		mapOfUserAndPics.put("Meenakshi", "assets\\img\\Photos1\\player4_meenakshi.jpg");
+		mapOfUserAndPics.put("Meenakshi", "assets\\img\\Photos1\\meenakshi.jpg");
 		mapOfUserAndPics.put("Prateek", "assets\\img\\Photos1\\player5_prateek.jpg");
 		mapOfUserAndPics.put("Hrishi", "assets\\img\\Photos1\\player6_hrishi.jpg");
 		mapOfUserAndPics.put("Sonal", "assets\\img\\Photos1\\player7_Sonal.jpg");

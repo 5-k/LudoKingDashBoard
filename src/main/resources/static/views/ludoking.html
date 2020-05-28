@@ -138,9 +138,9 @@
         </div>
 
         <div class="row content">
-          <div class="col-lg-6  col-md-6 col-sm-6">
+          <div class="col-lg-6  col-md-6 col-sm-6" >
 
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12" ng-if="semifinal1.winner.length >0">
                 <h3>
                   <p><span style="color:#b20969">Winner </span>: {{semifinal1.winner}}</p>
                   <p><span style="color:#b20969">Second </span>: {{semifinal1.second}}</p>
@@ -161,7 +161,7 @@
 
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12" ng-if="semifinal2.winner.length >0">
               <h3>
                 <p><span style="color:#b20969">Winner </span>: {{semifinal2.winner}}</p>
                 <p><span style="color:#b20969">Second </span>: {{semifinal2.second}}</p>
